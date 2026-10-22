@@ -1,13 +1,13 @@
 
 # Robô Emocional
 
-Projeto de robótica interativa que combina Python, visão computacional e Arduino para detectar expressões faciais e representá-las em um display OLED.
+Projeto de robótica interativa que combina **Python, visão computacional e Arduino** para detectar expressões faciais e representá-las em um display OLED.
 
 ## Sobre o projeto
 
 O Robô Emocional utiliza uma câmera para analisar características faciais em tempo real. A aplicação em Python identifica expressões a partir de medidas geométricas do rosto e envia o resultado para um Arduino por comunicação serial.
 
-O Arduino recebe o comando e pode representar a expressão correspondente no display OLED.
+O Arduino recebe o comando e representa a expressão correspondente no display OLED.
 
 ## Funcionalidades
 
@@ -17,7 +17,7 @@ O Arduino recebe o comando e pode representar a expressão correspondente no dis
 - Classificação de expressões: feliz, triste, surpreso, bravo e neutro.
 - Comunicação entre Python e Arduino por porta serial.
 - Visualização da imagem e da expressão detectada.
-- Representação das expressões no display OLED, por meio do código Arduino.
+- Representação das expressões no display OLED.
 
 ## Tecnologias utilizadas
 
@@ -34,13 +34,14 @@ O Arduino recebe o comando e pode representar a expressão correspondente no dis
 ```text
 robo-emocional/
 ├── camera.py
+├── face_landmarker.task
 ├── robo_emocional.ino
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
 
-##  Requisitos
+## Requisitos
 
 - Python instalado.
 - Arduino compatível com o código do projeto.
@@ -48,27 +49,28 @@ robo-emocional/
 - Display OLED compatível com o firmware.
 - Cabo USB para comunicação com o Arduino.
 
-##  Como executar
+## Como executar
 
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/robo-emocional.git
+git clone https://github.com/EshilleyZanatti/robo-emocional.git
 cd robo-emocional
 ```
 
-Substitua `SEU-USUARIO` pelo seu usuário do GitHub.
+### 2. Crie e ative um ambiente virtual
 
-### 2. Crie um ambiente virtual
+No macOS ou Linux:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-No Windows, ative o ambiente com:
+No Windows:
 
 ```bash
+python -m venv .venv
 .venv\Scripts\activate
 ```
 
@@ -89,7 +91,7 @@ pip install -r requirements.txt
 
 No arquivo `camera.py`, ajuste a porta serial para corresponder à porta do Arduino no seu computador.
 
-O código utiliza atualmente uma porta específica do macOS. Ela poderá ser diferente em outros computadores.
+A porta configurada pode variar conforme o sistema operacional e o hardware utilizado.
 
 A velocidade serial configurada é de 9600 baud.
 
@@ -99,7 +101,7 @@ A velocidade serial configurada é de 9600 baud.
 python camera.py
 ```
 
-A janela da câmera será aberta. Pressione ESC para encerrar a execução.
+A janela da câmera será aberta. Pressione `ESC` para encerrar a execução.
 
 ## Como funciona
 
@@ -112,7 +114,7 @@ A janela da câmera será aberta. Pressione ESC para encerrar a execução.
 
 ## Demonstração
 
-(https://www.instagram.com/p/Dech9imh5Da/)
+[Assista à demonstração do Robô Emocional no Instagram](https://www.instagram.com/p/Dech9imh5Da/)
 
 ## Observações
 
@@ -120,8 +122,8 @@ A classificação utiliza regras geométricas simples e experimentais. Expressõ
 
 O funcionamento depende da câmera, das bibliotecas instaladas, da conexão serial e da configuração do hardware.
 
-##  Autoria
+## Autoria
 
-Desenvolvido por **Eshilley Zanatti**.
+**Desenvolvido por Eshilley Zanatti.**
 
 Projeto pessoal de exploração de robótica, programação e visão computacional.
